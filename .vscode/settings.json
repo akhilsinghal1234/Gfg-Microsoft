@@ -1,5 +1,11 @@
 {
     "files.associations": {
-        "vector": "cpp"
+        "vector": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "valarray": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "iosfwd": "cpp"
     }
 }

@@ -47,33 +47,34 @@ class Trie{
 
     vector<int> search(string s){
         Trienode *temp = root;
+        vector<int> dummy(size, 0);
         for(int i = 0; i < s.length(); i++){
             int key = s[i]-'a';
             if(temp->children[key] == NULL)
-                return temp->present;
+                return dummy;
             temp = temp->children[key];
         }
         return temp->present;
     }
 };
 
-// void phoneDirec(Trie t, vector<string> &strings, string p){
-//     string pat;
-//     vector<int> present;
-//     for(int i = 0; i < p.length(); i++){
-//         pat += p[i];
-//         present = t.search(pat);
-//         int count = 0;
-//         for(int i = 0; i < present.size(); i++)
-//             if(present[i]){
-//                 count++;
-//                 cout << strings[i] << " ";
-//             }
-//             cout << endl;
-//         if(count == 0)
-//             cout << "0" << endl;
-//     }   
-// }
+void phoneDirec(Trie t, vector<string> &strings, string p){
+    string pat;
+    vector<int> present;
+    for(int i = 0; i < p.length(); i++){
+        pat += p[i];
+        present = t.search(pat);
+        int count = 0;
+        for(int i = 0; i < present.size(); i++)
+            if(present[i]){
+                count++;
+                cout << strings[i] << " ";
+            }
+        if(count == 0)
+            cout << "0";
+        cout << endl;
+    }   
+}
 
 int main() {
     int test, n, i = 0;
