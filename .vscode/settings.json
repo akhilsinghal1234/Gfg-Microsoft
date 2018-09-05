@@ -16,6 +16,9 @@
         "initializer_list": "cpp",
         "bitset": "cpp",
         "utility": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "iostream": "cpp",
+        "map": "cpp",
+        "*.tcc": "cpp"
     }
 }
