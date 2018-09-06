@@ -19,14 +19,16 @@ bool mycmp(vector<int> &a, vector<int> &b){
 }
 
 void number(vector<int>& array) {
-    int x = 0;
-    for(int i = 0; i < array.size(); i++)
+    int x = array[0];
+    for(int i = 1; i < array.size(); i++){
         x = x^array[i];
+    }
+
     int t = ~(x-1);
     t = x & t;
     int xor1 = 0, xor2 = 0;
     for(int i = 0; i < array.size(); i++){
-        if(array[i]&t)
+        if(array[i] & t)
             xor1 = xor1^array[i];
         else
             xor2 = xor2^array[i];
@@ -40,6 +42,7 @@ int main(){
     while(--t >= 0){
         int n, x, req;
         cin >> n;
+        n = 2*(n+1);
         vector<int> v;
         while(n > 0){
             n -= 1;
