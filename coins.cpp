@@ -16,8 +16,8 @@ int coinChange(vector<int>& coins, int amount) {
     if(amount == 0)
         return 0;
     
-    for(int j = 1; j <= amount; j++){
-        for(int i = 0; i < coins.size(); i++){
+    for(int i = 0; i < coins.size(); i++){
+        for(int j = 1; j <= amount; j++){
             
             int x = (j-coins[i] >= 0) ? dp[i][j-coins[i]]:0;
             int y = (i > 0) ? dp[i-1][j] : 0;
