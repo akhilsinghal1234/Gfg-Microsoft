@@ -9,11 +9,11 @@ int multc(vector<int> v){
         
     int last;
     for(int i = 2; i < v.size(); i++){
-        for(int j = 1; j < v.size()-i+1; j++){
-            last = j+i-1;
-            dp[j][last] = INT_MAX;
-            for(int k = j; k < last; k++){
-                dp[j][last] = min(dp[j][last], v[j-1]*v[k]*v[last] + dp[j][k] + dp[k+1][last]);
+        for(int start = 1; start < v.size()-i+1; start++){
+            last = start+i-1;
+            dp[start][last] = INT_MAX;
+            for(int k = start; k < last; k++){
+                dp[start][last] = min(dp[start][last], v[start-1]*v[k]*v[last] + dp[start][k] + dp[k+1][last]);
             }
         }
     }
