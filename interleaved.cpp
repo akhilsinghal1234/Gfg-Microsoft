@@ -18,7 +18,7 @@ bool interleaved(string x, int i, string y, int j, string xy, int k) {
 }
 
 bool interleaved(string x, string y, string xy) {
-    bool dp[x.length()+1][y.length()+1][xy.length()-1];
+    bool dp[x.length()+1][y.length()+1][xy.length()+1];
     memset(dp, false, sizeof(dp));
     for(int k = 0; k < xy.length()+1; k++){
         for(int j = 0; j < y.length()+1; j++){

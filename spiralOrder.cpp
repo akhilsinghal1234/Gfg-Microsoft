@@ -35,10 +35,6 @@ int main()
             c_s++;
         }
         cout << endl;
-        // cout << endl << "indexes " << endl;
-        // cout << r_s << " " << r_e << " " << c_s << " " << c_e << endl;
-        // while(r_s != r_e)
-        //     cout << mat[]
     }
 	//code
 	return 0;

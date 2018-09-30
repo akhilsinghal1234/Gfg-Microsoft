@@ -19,6 +19,9 @@
         "cmath": "cpp",
         "iostream": "cpp",
         "map": "cpp",
-        "*.tcc": "cpp"
-    }
+        "*.tcc": "cpp",
+        "system_error": "cpp",
+        "string_view": "cpp"
+    },
+    "python.linting.pylintEnabled": false
 }

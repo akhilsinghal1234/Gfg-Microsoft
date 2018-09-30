@@ -1,4 +1,3 @@
-// #include <iostream>
 // #include <set>
 // #include <vector>
 #include <bits/stdc++.h>
@@ -62,14 +61,22 @@ void phoneDirec(Trie t, vector<string> &strings, string p){
     string pat;
     vector<int> present;
     for(int i = 0; i < p.length(); i++){
+        vector<string> ans;
         pat += p[i];
         present = t.search(pat);
         int count = 0;
         for(int i = 0; i < present.size(); i++)
             if(present[i]){
                 count++;
-                cout << strings[i] << " ";
+                ans.push_back(strings[i]);
+                // cout << strings[i] << " ";
             }
+        sort(ans.begin(), ans.end());
+        ans.erase(unique(ans.begin(), ans.end()), ans.end());
+        if(ans.size() != 0){
+            for(int i = 0; i < ans.size(); i++)
+                cout << ans[i] << " ";
+        }
         if(count == 0)
             cout << "0";
         cout << endl;
@@ -93,5 +100,5 @@ int main() {
         cin >> s;
         phoneDirec(t, strings, s);
     }
-	return 0;
+    return 0;
 }
